@@ -1,5 +1,5 @@
 import csv
-# import pandas as pd
+
 
 def save(user):
     user = dict(user)
@@ -7,7 +7,7 @@ def save(user):
     for row in open("database/data.csv"):
         rowcount += 1
     print(user.keys())
-    # if len((pd.read_csv('database/data.csv'))) != 0:
+
     if rowcount > 0:
         with open('database/data.csv', mode='a+', newline='') as csv_file:
             

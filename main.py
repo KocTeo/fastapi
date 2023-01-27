@@ -23,12 +23,10 @@ def read_item(item_id: int, q: Union[str, None] = None):
 def create_user(user: User):
     save(user)
     return user
-# pd.DataFrame()
+
 @app.get('/users')
 def list_users():
-    # data = 'database/data.csv'
     df = pd.read_csv('database/data.csv', sep=";")
-    # print(pd.DataFrame(data, index = ''))   
     for i in range(len(df)):
         if i > 0:
             print(dict(df.loc[i]))
