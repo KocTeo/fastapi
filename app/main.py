@@ -2,12 +2,15 @@ from typing import Union
 
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-from app.database.database import SessionLocal
-from app.models.pydantic.pyUser import CreateUser, BaseUser 
-from app.models.slqAlchemy.sqlUser import User
+from database.database import SessionLocal
+from models.pydantic.pyUser import CreateUser, BaseUser 
+from models.slqAlchemy.sqlUser import User
 
 app = FastAPI()
 
+@app.get("/")
+def home():
+    return { "message": "home" }
 
 def get_db():
     db = SessionLocal()
